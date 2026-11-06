@@ -105,11 +105,14 @@ void TrainingSlowMo::RenderSettings() {
 	if (ImGui::IsItemHovered())
 		ImGui::SetTooltip("Minimum speed limit.");
 
-	if (ImGui::SliderInt("Interval incraese (seconds).", &intervalTime, 30, 600)) {
-		minSpeedCvar.setValue(intervalTime);
+	CVarWrapper intervalTimeCvar = cvarManager->getCvar("slowMoIntervalTime");
+	if (!intervalTimeCvar) return;
+	int intervalSeconds = intervalTimeCvar.getIntValue();
+	if (ImGui::SliderInt("Interval increase (seconds).", &intervalSeconds, 30, 600)) {
+		intervalTimeCvar.setValue(intervalSeconds);
 	}
 	if (ImGui::IsItemHovered())
-		ImGui::SetTooltip("Minimum speed limit.");
+		ImGui::SetTooltip("Seconds between speed increases (\"Increase speed over time\" mode).");
 
 	// ------------------------ MESSAGES SETTINGS ---------------------------------
 	
