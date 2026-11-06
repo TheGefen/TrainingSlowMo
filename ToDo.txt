@@ -1,0 +1,33 @@
+Usefull class for manipulating training:
+TrainingEditorWrapper https://github.com/bakkesmodorg/BakkesModSDK/blob/c284dffd865a492a7826d0eb0b1abc73df0ddf29/include/bakkesmod/wrappers/GameEvent/TrainingEditorWrapper.h
+Mainly for controlling the shots
+
+GfxDataTrainingWrapper https://github.com/bakkesmodorg/BakkesModSDK/blob/c284dffd865a492a7826d0eb0b1abc73df0ddf29/include/bakkesmod/wrappers/gfx/GfxDataTrainingWrapper.h
+Mainly for getting info about them
+
+sv_training_next  sv_training_prev and  sv_training_set someNumber
+
+
+* Basic spaced repetition algo
+Probably an array with all shots, each shot contains an int and a level. When int reach 0, add it to current queue. miss -> increase level, hit -> decrease level 
+	- handleFailAttempt
+	- handleSuccessAttempt
+	- getNextShot
+	- genNewSet
+
+* setNextShot(int)
+
+* enable gui
+
+* implement success/fail in shot
+- 
+
+
+* How much contorl. 
+
+* GUI for current shot and shot pull? 
+	a. how many shots per level?
+* repeat until succeed control?
+
+
+TODO
